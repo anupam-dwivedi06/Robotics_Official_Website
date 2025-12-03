@@ -7,7 +7,7 @@ export default function Navbar() {
 
   return (
     <>
-      <div className="w-screeen h-[5vw] flex justify-between p-5 bg-[rgba(22,24,49,1)] ">
+      <div className="w-screeen flex justify-between p-5 bg-[rgba(22,24,49,1)] ">
         <div className="text-white">logo</div>
 
         <div>
@@ -34,7 +34,7 @@ export default function Navbar() {
         </button>
 
         {open && (
-          <ul className="md-hidden text-white absolute top-[5vw] left-0 w-full flex flex-col gap-5 p-6 font-semibold items-center bg-gradient-to-b from-blue-950 to-blue-800">
+          <ul className="md-hidden text-white absolute top-16 left-0 w-full flex flex-col gap-5 p-6 font-semibold items-center bg-gradient-to-b from-blue-950 to-blue-800">
             <li>
               <Link href="/">Home</Link>
               <br className="h-5 text-gray-800 w-full"/>
