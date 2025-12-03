@@ -29,26 +29,45 @@ export default function Navbar() {
 
         {/* Hamburger button */}
 
-        <button className="md:hidden text-3xl text-white" onClick={() => setopen(!open)}>
+        <button
+          className="md:hidden text-3xl text-white"
+          onClick={() => setopen(!open)}
+        >
           ☰
         </button>
 
         {open && (
           <ul className="md-hidden text-white absolute top-16 left-0 w-full flex flex-col gap-5 p-6 font-semibold items-center bg-gradient-to-b from-blue-950 to-blue-800">
-            <li>
-              <Link href="/">Home</Link>
-              <br className="h-5 text-gray-800 w-full"/>
-            </li>
-            <li>
-              <Link href="/robomax">RoboMax</Link>
-            </li>
-            <li>
-              <Link href="/ourteam">Our Team</Link>
-            </li>
-            <li>
-              <Link href="/pastevents">Past Events</Link>
-            </li>
-          </ul>
+  
+  <li className="flex flex-col w-full text-center">
+    <Link href="/" className="block">
+      Home
+    </Link>
+    <hr className="w-full h-[1px] bg-white border-0 mt-2" />
+  </li>
+
+  <li className="flex flex-col w-full text-center">
+    <Link href="/robomax" className="block">
+      RoboMax
+    </Link>
+    <hr className="w-full h-[1px] bg-white border-0 mt-2" />
+  </li>
+
+  <li className="flex flex-col w-full text-center">
+    <Link href="/ourteam" className="block">
+      Our Team
+    </Link>
+    <hr className="w-full h-[1px] bg-white border-0 mt-2" />
+  </li>
+
+  <li className="flex flex-col w-full text-center">
+    <Link href="/pastevents" className="block">
+      Past Events
+    </Link>
+    <hr className="w-full h-[1px] bg-white border-0 mt-2" />
+  </li>
+  
+</ul>
         )}
       </div>
     </>
