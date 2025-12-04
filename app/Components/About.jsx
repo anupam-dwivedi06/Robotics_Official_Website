@@ -32,7 +32,7 @@ const About = () => {
                 Our Mission & Vision
             </h2>
             <p className="mb-4 leading-relaxed text-gray-300">
-              **Lorem ipsum** dolor sit amet consectetur adipisicing elit. Soluta accusamus ducimus a est voluptas, deleniti culpa quae, pariatur vero magni ut quam sapiente nesciunt nihil facere ea, blanditiis debitis facilis. We are committed to delivering excellence and innovation in all our endeavors.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta accusamus ducimus a est voluptas, deleniti culpa quae, pariatur vero magni ut quam sapiente nesciunt nihil facere ea, blanditiis debitis facilis. We are committed to delivering excellence and innovation in all our endeavors.
             </p>
             <p className="leading-relaxed text-gray-300">
               Itaque eum autem illum, nostrum debitis recusandae nemo eveniet ipsam soluta? Amet, doloremque? Pariatur assumenda est obcaecati aut, sapiente fuga atque accusantium? Our vision is to be a leader in the industry, recognized for our quality and dedication to our clients.
