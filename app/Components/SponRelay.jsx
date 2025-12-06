@@ -3,39 +3,28 @@ import { RefreshCcw, Zap, Heart, Star, Cloud, Send } from 'lucide-react';
 
 // Define the custom CSS for the scrolling animation using a <style> tag
 const customStyles = `
-/* 1. Define the LTR animation keyframes for a seamless loop.
-  
-  - START: The inner content is shifted left by the width of one content set (W).
-           This means the DUPLICATED content (B) is visible in the viewport.
-  - END:   The inner content moves to translateX(0).
-           This means the ORIGINAL content (A) is visible in the viewport.
-  
-  When the animation loops, the transition from the end of A back to the start of B (-W)
-  is perfectly seamless because A and B contain identical items.
-*/
+
+
 @keyframes marquee-scroll-ltr {
   from {
-    /* Start at negative the width of one set of logos (Content A is off-screen to the left) */
     transform: translateX(var(--negative-scroll-distance-px)); 
   }
   to {
-    /* End at origin (Content B moves off, Content A is fully visible) */
+    
     transform: translateX(0); 
   }
 }
 
-/* 2. Apply the animation to the inner scrolling container.
-*/
+
 .marquee-inner {
   display: flex;
-  /* Use the LTR keyframes and run in the normal direction */
+  
   animation: marquee-scroll-ltr linear infinite;
   animation-play-state: running;
-  /* The total width is twice the width of the visible content set (A + B) */
+  
   width: var(--double-content-width-px); 
 }
 
-/* Pause the animation on hover */
 .marquee-container:hover .marquee-inner {
   animation-play-state: paused;
 }
@@ -116,7 +105,7 @@ const SponsorMarquee = () => {
 // Main App Component
 const SponRelay = () => {
   return (
-    <div className="min-h-screen bg-gray-950 flex flex-col items-center justify-center p-4 font-sans">
+    <div className="min-h-screen  flex flex-col items-center justify-center p-4 font-sans">
       <header className="text-center mb-12">
         <h1 className="text-4xl font-extrabold text-white mb-2">
           Our Valued Partners
