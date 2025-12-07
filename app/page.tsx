@@ -3,6 +3,7 @@ import Hero from './Components/HeroSection'
 import About from './Components/About'
 import NewSponsor from './Components/NewSponsor';
 
+import PastEventText from './Components/PastEventText';
 import PastEvent from './Components/PastEvent';
 import PeopleSay from './Components/PeopleSay';
 import SponRelay from './Components/SponRelay';
@@ -17,6 +18,7 @@ export default function Home() {
       <About />
       <NewSponsor />
       <PastEvent />
+      <PastEventText />
 
       <PeopleSay />
       <SponRelay />
