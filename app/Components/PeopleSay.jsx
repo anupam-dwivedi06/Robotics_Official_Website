@@ -28,7 +28,7 @@ const PeopleSay = () => {
     return (
         <>  
 
-        <div className=" p-8 md:p-16">
+        <div className=" p-8 md:p-16 mt-16">
             <div className="flex flex-col gap-4">
                 <h2 className="text-center text-gray-600 text-3xl md:text-4xl font-extrabold">What People Say</h2>
                 <div className="w-25 bg-white h-[3px]  m-auto rounded-2xl"></div>
