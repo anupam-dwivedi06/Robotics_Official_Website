@@ -58,8 +58,8 @@ export default function Navbar() {
           {[
             { name: 'Home', href: '/' },
             { name: 'RoboMax', href: '/robomax' },
-            { name: 'Our Team', href: '/ourteam' },
-            { name: 'Past Events', href: '/pastevents' },
+            { name: 'Our Team', href: '/' },
+            { name: 'Past Events', href: '#pastevent' },
           ].map((item, index, array) => (
             <li 
               key={item.name} 
