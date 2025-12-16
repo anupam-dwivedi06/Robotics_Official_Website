@@ -30,10 +30,10 @@ export default function Navbar() {
               <Link href="/robomax" className="hover:text-indigo-400 transition">RoboMax</Link>
             </li>
             <li>
-              <Link href="/ourteam" className="hover:text-indigo-400 transition">Our Team</Link>
+              <Link href="/" className="hover:text-indigo-400 transition">Our Team</Link>
             </li>
             <li>
-              <Link href="/pastevents" className="hover:text-indigo-400 transition">Past Events</Link>
+              <Link  href="#pastevent" className="hover:text-indigo-400 transition">Past Events</Link>
             </li>
           </ul>
         </div>

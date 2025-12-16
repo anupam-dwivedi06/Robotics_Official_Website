@@ -21,7 +21,7 @@ const PastEvent = () => {
   ];
   return (
     // Padding adjusted to look better within a dark theme
-    <section className="py-16 md:py-24">
+    <section className="py-16 md:py-24" id="pastevent">
       <div className="container mx-auto px-6 lg:px-12 ">
         
         {/* Header Section */}
