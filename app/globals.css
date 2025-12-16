@@ -2,5 +2,6 @@
 
 
 body {
-  @apply bg-[rgba(22,24,49,1)] ;
+  /* @apply bg-[rgba(22,24,49,1)] ; */
+  @apply bg-gray-900;
 }
