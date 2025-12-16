@@ -118,10 +118,6 @@ const SponRelay = () => {
       <div className="w-full max-w-7xl">
         <SponsorMarquee />
       </div>
-
-      <footer className="mt-16 text-sm text-gray-500">
-        Marquee effect created with React and CSS Keyframes.
-      </footer>
     </div>
   );
 };
