@@ -1,84 +1,94 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
+import GooeyNav from "../../reactBitsComponents/GooeyNav";
 
 export default function Navbar() {
-  // Use setOpen for clarity (standard convention)
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+
+  const navItems = [
+    { label: "Home", href: "/" },
+    { label: "Competitions", href: "/robomax" },
+    { label: "Our Team", href: "/" },
+    { label: "Past Events", href: "#pastevent" },
+  ];
 
   return (
-    <>
-      {/* The FIX: 
-        1. Corrected the typo: w-screeen -> w-screen.
-        2. Removed the separate HR tag.
-        3. Applied the border-b class (border-bottom) directly to this sticky div. 
-      */}
-      <div 
-        className=" flex justify-between p-5 px-8
-                   bg-[rgba(22,24,49,1)] sticky top-0 z-50 
-                   border-b border-white/20 shadow-lg" // Added border-b and shadow-lg for better visual separation
-      >
-        <div className="text-white font-bold text-xl">logo</div>
-
-        {/* Desktop Menu */}
-        <div>
-          <ul className="hidden md:flex justify-between gap-10 text-white font-medium">
-            <li>
-              <Link href="/" className="hover:text-indigo-400 transition">Home</Link>
-            </li>
-            <li>
-              <Link href="/robomax" className="hover:text-indigo-400 transition">RoboMax</Link>
-            </li>
-            <li>
-              <Link href="/" className="hover:text-indigo-400 transition">Our Team</Link>
-            </li>
-            <li>
-              <Link  href="#pastevent" className="hover:text-indigo-400 transition">Past Events</Link>
-            </li>
-          </ul>
+    <nav className="bg-[#161831] sticky top-0 z-50 border-b border-white/20 shadow-lg">
+      <div className="flex justify-between items-center p-5 px-8 h-20">
+        {/* LOGO */}
+        <div className="text-white font-bold text-xl uppercase tracking-wider">
+          Logo
         </div>
 
-        {/* Hamburger button */}
-        <button
-          className="md:hidden text-3xl text-white z-50"
-          onClick={() => setOpen(!open)} // Changed setopen to setOpen
+        {/* GOOEY NAV - Visible on both Mobile and Desktop now */}
+        <div
+          className="flex-1 hidden md:flex justify-center md:justify-end mr-4"
+          style={{ height: "40px", position: "relative" }}
         >
-          {open ? '✕' : '☰'}
+          <GooeyNav
+            items={navItems}
+            particleCount={20}
+            particleDistances={[90, 10]}
+            particleR={100}
+            initialActiveIndex={0}
+            animationTime={600}
+            timeVariance={300}
+          />
+        </div>
+
+        {/* HAMBURGER - Only shows on mobile if you still want the extra links */}
+        <button
+          className="md:hidden text-3xl text-white z-50 focus:outline-none"
+          onClick={() => setOpen(!open)}
+        >
+          {open ? "✕" : "☰"}
         </button>
 
-        {/* Mobile Menu */}
-        <ul className={`
-            md:hidden text-white absolute top-[65px] left-0 w-full 
-            flex flex-col gap-0 font-semibold items-center 
-            bg-[rgba(22,24,49,1)] shadow-xl z-40
-            transition-all duration-500 ease-in-out overflow-hidden
-            ${open ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'} 
-        `}>
-          {/* Menu items structure simplified for readability and transition consistency */}
-          {[
-            { name: 'Home', href: '/' },
-            { name: 'RoboMax', href: '/robomax' },
-            { name: 'Our Team', href: '/' },
-            { name: 'Past Events', href: '#pastevent' },
-          ].map((item, index, array) => (
-            <li 
-              key={item.name} 
-              className={`w-full text-center py-4 hover:bg-blue-800 transition ${index < array.length - 1 ? 'border-b border-white/10' : ''}`}
+        {/* MOBILE DROPDOWN */}
+        <div
+          className={`
+            absolute top-20 left-0 w-full md:hidden
+            bg-[#161831]/95 backdrop-blur-xl border-b border-white/10
+            transition-all duration-300 ease-in-out overflow-hidden
+            ${
+              open
+                ? "max-h-[300px] opacity-100"
+                : "max-h-0 opacity-0 pointer-events-none"
+            }
+          `}
+        >
+          <ul className="flex flex-col py-4">
+            {/* {navItems.map((item) => (
+              <li key={item.label} className="w-full">
+                <Link 
+                  href={item.href} 
+                  onClick={() => setOpen(false)}
+                  className={`block px-8 py-4 text-lg font-medium ${pathname === item.href ? 'text-black bg-white' : 'text-white/70'}`}
+                >
+                  {item.label}
+                </Link>
+              </li>
+            ))} */}
+            <div
+              className=" md:hidden flex flex-col justify-center md:justify-end mr-4"
+              style={{ height: "40px", position: "relative" }}
             >
-              <Link 
-                href={item.href} 
-                className="block" 
-                onClick={() => setOpen(false)} // Close menu on link click
-              >
-                {item.name}
-              </Link>
-            </li>
-          ))}
-        </ul>
+              <GooeyNav
+                items={navItems}
+                particleCount={20}
+                particleDistances={[90, 10]}
+                particleR={100}
+                initialActiveIndex={0}
+                animationTime={600}
+                timeVariance={300}
+              />
+            </div>
+          </ul>
+        </div>
       </div>
-      {/* REMOVED the problematic <hr> tag here: 
-        <hr className="w-full h-[0.5px] bg-white border-0 mt-2 sticky top-[75px] md:top-[60px] z-50" />
-      */}
-    </>
+    </nav>
   );
 }
