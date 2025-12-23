@@ -2,20 +2,20 @@ const PastEvent = () => {
   const events = [
     {
       id: 1,
-      name: "RoboMAX 2023",
-      des: "Annual Robotics Competition with 200+ Participants, featuring line-following, bot-soccer, and autonomous challenges.",
+      name: "ROBOTRONICS",
+      des: "Robotronics was a week-long workshop where students explored robotics, machine learning, IOT and AI. They engaged in hands-on activities with robot kits and  simulation software, learning about mototr control and sensors.",
       imgSrc: "placeholder_robomax_2023",
     },
     {
       id: 2,
-      name: "AI Workshop Series",
-      des: "A 5-day intensive workshop focusing on TensorFlow and Python for machine vision in robotics applications.",
+      name: "AUTOMAX 2.0",
+      des: "AutoMax 2.0 our club's first past-pandemic event, include a two-day electronics and mechanics workshop and a robotics competition. Workshop that saw footfall of 500+ students from colleges and schools passinate in robotics and promoting hands-on-learning",
       imgSrc: "placeholder_ai_workshop",
     },
     {
       id: 3,
-      name: "Innovate Hackathon",
-      des: "A 48-hour challenge where students designed and prototyped solutions for smart city infrastructure using IoT and robotics.",
+      name: "MAKE-a-THON",
+      des: "A cgallenge to transform theoretical knowledge into practical application. Students were equipped with robotics kits and were tasked with identify a real-word problem and developing a robotic solution",
       imgSrc: "placeholder_hackathon",
     },
   ];

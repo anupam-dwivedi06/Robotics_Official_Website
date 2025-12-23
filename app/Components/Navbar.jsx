@@ -84,6 +84,7 @@ export default function Navbar() {
                 initialActiveIndex={0}
                 animationTime={600}
                 timeVariance={300}
+                className=""
               />
             </div>
           </ul>

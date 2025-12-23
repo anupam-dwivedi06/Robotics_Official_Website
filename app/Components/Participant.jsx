@@ -2,10 +2,10 @@ import React from "react";
 
 const Participant = () => {
     const awardsList = [
-        { id: 1, name: "RoboMax 2023", des: "Annual Robotics Competition with 200+ participants" },
-        { id: 2, name: "TechFest Hackathon", des: "Top 3 finish in the IoT category" },
-        { id: 3, name: "National Robotics Championship", des: "1st Place in Autonomous Navigation Challenge" },
-        { id: 4, name: "State Level Line Following", des: "Winner in the advanced category" },
+        { id: 1, name: "ABU ROBOCON 23", des: "In the 2023 ABU Robocon ideation round, out team achieved 98.5 out of 100 points. We presented a detailed project featuring CAD modeling and documentation, with a focus on ring-throwing an collection robots" },
+        { id: 2, name: "FLIPKART GRID 4.0", des: "Hosted bu FlipKart, we built an autonomous drone for the esteemed GRID 4.0 competition. The drone was capable of pick and drop using camera vision, intergrating a pixhawk-flight controller an Raspberry Pi board" },
+        { id: 3, name: "IRDC 2023", des: " Our robotics club achieved a significant milestine by advancing to the second round of the international Rover Design Challenge (IRDC). Hosted by the Space Robotics Society. We demonstrated our team's exceptional technical abilities " },
+        { id: 4, name: "ISRO ROVER CHALLENGE'23", des: "Our robotics club is proud to announce its advancement to the second round of the ISRO Robotics challenge-URSC 2024. Themed 'Let's build a space robot', This competition offers a platform to develop robotics solution for future ISRP mission" },
         { id: 5, name: "International RoboCup", des: "Participation in the European standard league" },
         { id: 6, name: "AI Summit", des: "Best Research Paper Presentation Award" },
     ];
