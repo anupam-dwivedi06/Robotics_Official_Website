@@ -11,7 +11,7 @@ export default function Navbar() {
   const navItems = [
     { label: "Home", href: "/" },
     { label: "Competitions", href: "/robomax" },
-    { label: "Our Team", href: "/" },
+    { label: "Our Team", href: "/ourteam" },
     { label: "Past Events", href: "#pastevent" },
   ];
 
