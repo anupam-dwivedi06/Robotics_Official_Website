@@ -1,47 +1,75 @@
+"use client"; // Required for Framer Motion in Next.js App Router
+
+import { motion } from "framer-motion";
 
 const About = () => {
+  // Animation variants for reusability
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.8, ease: "easeOut" }
+    }
+  };
+
   return (
-    
-    <section className=" py-16 md:py-24">
+    <section className="py-16 md:py-24 overflow-hidden">
       <div className="container mx-auto px-6 md:px-12">
+        
         {/* === Header Section === */}
-        <div className="text-center mb-12">
+        <motion.div 
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          variants={fadeInUp}
+          className="text-center mb-12"
+        >
           <h1 className="text-4xl md:text-5xl text-white font-bold tracking-tight">
             About <span className="text-indigo-400">Us</span>
           </h1>
           <div className="w-20 h-1 bg-indigo-400 mx-auto mt-4 rounded-full" />
-        </div>
+        </motion.div>
 
         <div className="flex flex-col md:flex-row gap-10 md:gap-16 items-center">
           
-          {/* Image Container */}
-          <div className="w-full md:w-1/2 flex justify-center">
-            {/* 💡 Use a placeholder image source for cleaner code. 
-                Apply styling for rounded corners and shadow.
-            */}
+          {/* Image Container - Slides in from the left/bottom */}
+          <motion.div 
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="w-full md:w-1/2 flex justify-center"
+          >
             <img 
                 src="https://via.placeholder.com/600x400.png?text=Our+Team" 
-                alt="Image representing the company team or values"
+                alt="Our team"
                 className="rounded-xl shadow-2xl transition-transform duration-500 hover:scale-[1.02] max-w-full h-auto"
             />
-          </div>
+          </motion.div>
 
-          {/* Text Content Container */}
-          <div className="w-full md:w-1/2 text-white"> 
-            <h2 className="text-2xl font-semibold mb-4 text-indigo-300">
+          {/* Text Content Container - Slides up with Opacity */}
+          <motion.div 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={{
+              visible: { transition: { staggerChildren: 0.2 } } // Children animate one after another
+            }}
+            className="w-full md:w-1/2 text-white"
+          > 
+            <motion.h2 variants={fadeInUp} className="text-2xl font-semibold mb-4 text-indigo-300">
                 Our Mission & Vision
-            </h2>
-            <p className="mb-4 leading-relaxed text-gray-300">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta accusamus ducimus a est voluptas, deleniti culpa quae, pariatur vero magni ut quam sapiente nesciunt nihil facere ea, blanditiis debitis facilis. We are committed to delivering excellence and innovation in all our endeavors.
-            </p>
-            <p className="leading-relaxed text-gray-300">
-              Itaque eum autem illum, nostrum debitis recusandae nemo eveniet ipsam soluta? Amet, doloremque? Pariatur assumenda est obcaecati aut, sapiente fuga atque accusantium? Our vision is to be a leader in the industry, recognized for our quality and dedication to our clients.
-            </p>
-        
-            {/* <button className="mt-6 px-6 py-3 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700 transition duration-300 shadow-lg">
-                Learn More
-            </button> */}
-          </div>
+            </motion.h2>
+            
+            <motion.p variants={fadeInUp} className="mb-4 leading-relaxed text-gray-300">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta accusamus ducimus a est voluptas, deleniti culpa quae, pariatur vero magni ut quam sapiente nesciunt nihil facere ea, blanditiis debitis facilis.
+            </motion.p>
+            
+            <motion.p variants={fadeInUp} className="leading-relaxed text-gray-300">
+              Itaque eum autem illum, nostrum debitis recusandae nemo eveniet ipsam soluta? Our vision is to be a leader in the industry, recognized for our quality.
+            </motion.p>
+          </motion.div>
         </div>
       </div>
     </section>

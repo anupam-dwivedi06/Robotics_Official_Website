@@ -56,10 +56,10 @@ const NewSponsor = () => {
             </div>
           </div>
 
-          {/* Sponsors Section */}
-          <div className="text-white text-center mt-16 md:mt-24">
+          
+          {/* <div className="text-white text-center mt-16 md:mt-24">
             
-            {/* Sponsors Header */}
+           
             <h3 className="
               text-sm uppercase tracking-widest font-semibold py-1 px-4 
               bg-gradient-to-r from-purple-500 to-indigo-500 mx-auto 
@@ -68,7 +68,7 @@ const NewSponsor = () => {
               Event Sponsors & Partners
             </h3>
             
-            {/* Sponsor Logos */}
+           
             <div className="flex flex-wrap justify-center gap-6 md:gap-8 items-center mt-8">
               {[1, 2, 3, 4, 5].map((i) => (
                 <div key={i} className="w-full sm:w-1/4 md:w-1/6 p-4 bg-white rounded-lg h-20 flex items-center justify-center text-gray-600 font-medium">
@@ -76,7 +76,7 @@ const NewSponsor = () => {
                 </div>
               ))}
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
     </>

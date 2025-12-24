@@ -17,10 +17,14 @@ export default function Navbar() {
 
   return (
     <nav className="bg-[#161831] sticky top-0 z-50 border-b border-white/20 shadow-lg">
-      <div className="flex justify-between items-center p-5 px-8 h-20">
+      <div className="flex justify-between items-center pr-5 md:p-5 md:px-8 h-20">
         {/* LOGO */}
-        <div className="text-white font-bold text-xl uppercase tracking-wider">
-          Logo
+        <div className="flex items-center ">
+          <img
+            src="/robotics_logo2R.png"
+            alt="Robotics Logo"
+            className="h-40 mt-5 w-auto object-contain "
+          />
         </div>
 
         {/* GOOEY NAV - Visible on both Mobile and Desktop now */}
@@ -61,7 +65,7 @@ export default function Navbar() {
           `}
         >
           <ul className="flex flex-col py-4">
-            {/* {navItems.map((item) => (
+            {navItems.map((item) => (
               <li key={item.label} className="w-full">
                 <Link 
                   href={item.href} 
@@ -71,8 +75,8 @@ export default function Navbar() {
                   {item.label}
                 </Link>
               </li>
-            ))} */}
-            <div
+            ))}
+            {/* <div
               className=" md:hidden flex flex-col justify-center md:justify-end mr-4"
               style={{ height: "40px", position: "relative" }}
             >
@@ -86,7 +90,7 @@ export default function Navbar() {
                 timeVariance={300}
                 className=""
               />
-            </div>
+            </div> */}
           </ul>
         </div>
       </div>
