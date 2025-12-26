@@ -19,8 +19,8 @@ const PastEventText = () => {
 
     const stats = [
         { label: "Total Participants", value: "500+" },
-        { label: "Events Organized", value: "25+" },
-        { label: "Prizes Won", value: "15+" },
+        { label: "Events Organized", value: "15+" },
+        { label: "Competitions attended ", value: "20+" },
         { label: "Active Members", value: "80+" },
     ];
 
