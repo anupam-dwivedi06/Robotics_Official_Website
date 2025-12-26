@@ -19,7 +19,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative overflow-hidden h-[90vh] flex items-center bg-[#161831]">
+    <section className="relative overflow-hidden h-[100vh] flex items-center bg-[#161831]">
       
       {/* 1. LIQUID ETHER BACKGROUND */}
       <div 
