@@ -1,60 +1,61 @@
 import React, { useMemo } from 'react';
-import { RefreshCcw, Zap, Heart, Star, Cloud, Send } from 'lucide-react';
 
 // Define the custom CSS for the scrolling animation using a <style> tag
 const customStyles = `
-
-
 @keyframes marquee-scroll-ltr {
   from {
     transform: translateX(var(--negative-scroll-distance-px)); 
   }
   to {
-    
     transform: translateX(0); 
   }
 }
 
-
 .marquee-inner {
   display: flex;
-  
   animation: marquee-scroll-ltr linear infinite;
   animation-play-state: running;
-  
   width: var(--double-content-width-px); 
 }
 
 .marquee-container:hover .marquee-inner {
   animation-play-state: paused;
 }
+
+.logo-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: grayscale(20%) brightness(1.2);
+  transition: filter 0.3s ease;
+}
+
+.logo-img:hover {
+  filter: grayscale(0%) brightness(1);
+}
 `;
 
-// Array of placeholder sponsor data (using lucide-react icons instead of image URLs)
+// Updated sponsor data using your provided Cloudinary links
 const sponsorData = [
-  { name: "Apex Dynamics", icon: Zap, color: "text-red-500" },
-  { name: "Starlight Corp", icon: Star, color: "text-yellow-500" },
-  { name: "Heartland", icon: Heart, color: "text-pink-500" },
-  { name: "CloudStream", icon: Cloud, color: "text-blue-500" },
-  { name: "Refresh Labs", icon: RefreshCcw, color: "text-green-500" },
-  { name: "Messenger Co.", icon: Send, color: "text-indigo-500" },
+  { name: "Dainik Jagran", src: "https://res.cloudinary.com/dsgdfqnbj/image/upload/v1766738070/dainikjagran_is8k5u.png" },
+  { name: "Hitvada", src: "https://res.cloudinary.com/dsgdfqnbj/image/upload/v1766738071/hitvada_c8yknq.png" },
+  { name: "LIC", src: "https://res.cloudinary.com/dsgdfqnbj/image/upload/v1766738071/lic_riha2j.jpg" },
+  { name: "Made Easy", src: "https://res.cloudinary.com/dsgdfqnbj/image/upload/v1766738072/madeeasy_gkltzv.png" },
+  { name: "Nai Dunia", src: "https://res.cloudinary.com/dsgdfqnbj/image/upload/v1766738071/naidunia_bkdava.png" },
+  { name: "Patrika", src: "https://res.cloudinary.com/dsgdfqnbj/image/upload/v1766738072/patrika_dksgan.png" },
+  { name: "Rao Academy", src: "https://res.cloudinary.com/dsgdfqnbj/image/upload/v1766738072/raoacademy_rnizxa.png" },
+  { name: "The Pioneer", src: "https://res.cloudinary.com/dsgdfqnbj/image/upload/v1766738072/pioneer_ljgw4h.png" },
+  { name: "Robonauts", src: "https://res.cloudinary.com/dsgdfqnbj/image/upload/v1766738074/robonauts_xj5p72.png" },
 ];
 
-
 const SponsorMarquee = () => {
-  const scrollDurationSeconds = 40; // Controls the speed of the scroll
+  const scrollDurationSeconds = 30; // Slightly faster for 9 items
   
-  // CRITICAL: Precise calculation of item width based on Tailwind classes:
-  // w-32 = 128px
-  // mx-4 = 16px left + 16px right = 32px
-  const itemWidthWithMargin = 128 + 32; // 160px
-  
+  // Adjusted sizing: 160px width (w-40) + 32px margin (mx-4) = 192px total
+  const itemWidthWithMargin = 160 + 32; 
   const totalItems = sponsorData.length;
-  
-  // The exact distance the inner container must travel to complete one seamless loop.
-  const scrollDistance = totalItems * itemWidthWithMargin; // 6 * 160 = 960px
+  const scrollDistance = totalItems * itemWidthWithMargin;
 
-  // We duplicate the list to ensure the loop is seamless.
   const duplicatedSponsors = useMemo(() => 
     [...sponsorData, ...sponsorData], 
     []
@@ -62,56 +63,49 @@ const SponsorMarquee = () => {
 
   return (
     <>
-      {/* Inject custom CSS variables for dynamic animation control */}
       <style>{customStyles}</style>
       
-      {/* Marquee Container - sets the visible window and overflow: hidden */}
       <div 
-        className="marquee-container w-full overflow-hidden p-6 bg-gray-900 border-t border-b border-gray-700 shadow-xl rounded-lg"
+        className="marquee-container w-full overflow-hidden p-8 bg-gray-900 border-t border-b border-gray-800 shadow-2xl"
         style={{
-          // Pass calculated pixel values to CSS
           '--scroll-distance-px': `${scrollDistance}px`,
-          '--negative-scroll-distance-px': `-${scrollDistance}px`, // Variable for the LTR start point
+          '--negative-scroll-distance-px': `-${scrollDistance}px`,
           '--double-content-width-px': `${scrollDistance * 2}px`,
         }}
       >
         <div 
           className="marquee-inner"
-          style={{
-            animationDuration: `${scrollDurationSeconds}s`,
-            // animationDirection is omitted (defaults to 'normal') as the keyframes now define the LTR movement perfectly.
-          }}
+          style={{ animationDuration: `${scrollDurationSeconds}s` }}
         >
-          {/* Render the duplicated list of sponsors */}
-          {duplicatedSponsors.map((sponsor, index) => {
-            const Icon = sponsor.icon;
-            return (
-              <div 
-                key={index} 
-                className="flex flex-shrink-0 items-center justify-center w-32 h-16 mx-4 bg-gray-800/50 rounded-lg transition duration-300 transform hover:scale-105"
-                title={sponsor.name}
-              >
-                <Icon className={`w-8 h-8 ${sponsor.color}`} />
-                <span className="text-xs text-gray-400 ml-2 font-medium hidden sm:inline">{sponsor.name}</span>
-              </div>
-            );
-          })}
+          {duplicatedSponsors.map((sponsor, index) => (
+            <div 
+              key={index} 
+              className="flex flex-shrink-0 items-center justify-center w-40 h-20 mx-4 bg-white/5 p-3 rounded-xl backdrop-blur-sm border border-white/10 transition duration-300 transform hover:scale-110"
+              title={sponsor.name}
+            >
+              <img 
+                src={sponsor.src} 
+                alt={sponsor.name} 
+                className="logo-img"
+                loading="lazy"
+              />
+            </div>
+          ))}
         </div>
       </div>
     </>
   );
 };
 
-// Main App Component
 const SponRelay = () => {
   return (
-    <div className="min-h-screen  flex flex-col items-center justify-center p-4 font-sans">
-      <header className="text-center mb-12">
-        <h1 className="text-4xl font-extrabold text-white mb-2">
-          Our Valued Partners
+    <div className="min-h-screen flex flex-col items-center justify-center p-4 font-sans">
+      <header className="text-center mb-16">
+        <h1 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400 mb-4">
+          Our Partners & Sponsors
         </h1>
-        <p className="text-lg text-gray-400">
-          The companies fueling our mission. Hover over the logos to pause the scroll!
+        <p className="text-lg text-gray-500 max-w-2xl">
+          Collaborating with industry leaders to drive innovation and excellence.
         </p>
       </header>
 
