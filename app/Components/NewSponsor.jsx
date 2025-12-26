@@ -19,7 +19,7 @@ const NewSponsor = () => {
             
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-500">
               {" "}
-              Upcoming Event: RoboMax
+              Upcoming Event
             </span>
           </h1>
         </motion.div>
@@ -78,8 +78,8 @@ const NewSponsor = () => {
                 transition={{ delay: 0.5 }}
                 className="text-white text-3xl md:text-6xl font-extrabold leading-tight"
               >
-                Annual Robotics <br />
-                <span className="text-indigo-400">Competition</span>
+                 <br />
+                <span className="text-indigo-400">Robofiesta 2026</span>
               </motion.h1>
 
               <motion.p
