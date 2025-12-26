@@ -16,7 +16,8 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="bg-[#161831] sticky top-0 z-50 border-b border-white/20 shadow-lg">
+    // Sticky fix: Added fixed top-0 and z-[999]
+    <nav className="bg-[#161831] fixed top-0 left-0 right-0 z-[999] border-b border-white/20 shadow-lg">
       <div className="flex justify-between items-center pr-5 md:p-5 md:px-8 h-20">
         {/* LOGO */}
         <div className="flex items-center ">
@@ -27,7 +28,7 @@ export default function Navbar() {
           />
         </div>
 
-        {/* GOOEY NAV - Visible on both Mobile and Desktop now */}
+        {/* GOOEY NAV */}
         <div
           className="flex-1 hidden md:flex justify-center md:justify-end mr-4"
           style={{ height: "40px", position: "relative" }}
@@ -43,7 +44,7 @@ export default function Navbar() {
           />
         </div>
 
-        {/* HAMBURGER - Only shows on mobile if you still want the extra links */}
+        {/* HAMBURGER */}
         <button
           className="md:hidden text-3xl text-white z-50 focus:outline-none"
           onClick={() => setOpen(!open)}
@@ -76,21 +77,6 @@ export default function Navbar() {
                 </Link>
               </li>
             ))}
-            {/* <div
-              className=" md:hidden flex flex-col justify-center md:justify-end mr-4"
-              style={{ height: "40px", position: "relative" }}
-            >
-              <GooeyNav
-                items={navItems}
-                particleCount={20}
-                particleDistances={[90, 10]}
-                particleR={100}
-                initialActiveIndex={0}
-                animationTime={600}
-                timeVariance={300}
-                className=""
-              />
-            </div> */}
           </ul>
         </div>
       </div>

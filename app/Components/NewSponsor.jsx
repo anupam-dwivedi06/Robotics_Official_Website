@@ -87,9 +87,12 @@ const NewSponsor = () => {
                 transition={{ delay: 0.6 }}
                 className="text-gray-300 text-lg leading-relaxed max-w-lg"
               >
-                Join us for the biggest robotics competition in Central India.
-                Showcase your skills, compete with the best teams, and win
-                exciting prizes.
+                Robofiesta 2026 brings together innovation, competition, and
+                creativity on one grand stage. With 4 new competitions designed
+                to push technical and strategic boundaries, participants will
+                face real-world challenges like never before. It’s more than a
+                contest — it’s a platform to learn, compete, and evolve. Join us
+                and be part of the future of robotics.
               </motion.p>
 
               <motion.button
