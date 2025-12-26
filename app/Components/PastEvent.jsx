@@ -8,42 +8,39 @@ const PastEvent = () => {
       id: 1,
       name: "AUTOMAX 4.0",
       des: "A hands-on workshop expanding beyond fundamentals with AI and ML, where participants built gesture-controlled cars blending robotics with intelligent systems.",
-      imgSrc: "placeholder_automax_4",
+      imgSrc: "https://res.cloudinary.com/dsgdfqnbj/image/upload/v1766763554/automax4_f2amhx.jpg",
     },
     {
       id: 2,
       name: "ROBOFIESTA 2025",
       des: "A technical showcase where students compete in high-stakes challenges like RoboRace, MazeRush, Cadathon, and Barricade Breakers.",
-      imgSrc: "placeholder_robofiesta_2025",
+      imgSrc: "https://res.cloudinary.com/dsgdfqnbj/image/upload/v1766763554/robofiesta25_uokgyw.webp",
     },
     {
       id: 3,
       name: "CYBERPUNK",
       des: "A robotics sports showdown combining soccer, archery, and sumo bot battles in a high-pressure arena demanding smart engineering.",
-      imgSrc: "placeholder_cyberpunk",
+      imgSrc: "https://res.cloudinary.com/dsgdfqnbj/image/upload/v1766763553/cyberpunk_cp8ktq.jpg",
     },
     {
       id: 4,
       name: "MAKE-a-THON",
       des: "A rapid prototyping contest where teams used robotics kits and countdown timers to solve real-world problems through creative collaboration.",
-      imgSrc: "placeholder_makeathon_new",
+      imgSrc: "https://res.cloudinary.com/dsgdfqnbj/image/upload/v1766763553/makeathon_awvrsb.jpg",
     },
     {
       id: 5,
       name: "AUTOMAX 3.0",
       des: "A massive workshop and competition for 500+ students from Bhopal, focusing on hands-on electronics and mechanics challenges.",
-      imgSrc: "placeholder_automax_3",
+      imgSrc: "https://res.cloudinary.com/dsgdfqnbj/image/upload/v1766763553/automax3_bsi98x.webp",
     },
   ];
 
-  // --- TUMHARA ORIGINAL ANIMATION START ---
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.2, 
-      },
+      transition: { staggerChildren: 0.2 },
     },
   };
 
@@ -55,13 +52,11 @@ const PastEvent = () => {
       transition: { duration: 0.6, ease: "easeOut" } 
     },
   };
-  // --- TUMHARA ORIGINAL ANIMATION END ---
 
   return (
     <section className="py-16 md:py-24 overflow-hidden" id="pastevent">
       <div className="container mx-auto px-6 lg:px-12">
         
-        {/* Header Section */}
         <motion.div 
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -73,7 +68,6 @@ const PastEvent = () => {
           </h1>
         </motion.div>
 
-        {/* Layout fix: grid use kiya hai taaki 5 cards sahi se dikhein */}
         <motion.div 
           variants={containerVariants}
           initial="hidden"
@@ -86,33 +80,26 @@ const PastEvent = () => {
               key={eventItem.id}
               variants={cardVariants}
               whileHover={{ y: -10 }} 
-              className="
-                bg-gray-800/60 p-5 rounded-xl flex flex-col w-full max-w-sm 
-                relative min-h-[400px] shadow-2xl backdrop-blur-sm 
-                border border-indigo-500/30 transition-shadow duration-300 mt-10
-                hover:shadow-indigo-500/20 hover:border-indigo-400
-              "
+              className="bg-gray-800/60 p-5 rounded-xl flex flex-col w-full max-w-sm relative min-h-[400px] shadow-2xl backdrop-blur-sm border border-indigo-500/30 transition-shadow duration-300 mt-10 hover:shadow-indigo-500/20 hover:border-indigo-400"
             >
-              {/* Image Visual */}
+              {/* Image Visual - FIXED FOR FULL VISIBILITY */}
               <motion.div
                 initial={{ scale: 0.8, opacity: 0 }}
                 whileInView={{ scale: 1, opacity: 1 }}
                 transition={{ delay: index * 0.2 + 0.3 }}
-                className="
-                  bg-white w-[85%] absolute h-[180px] rounded-lg 
-                  flex items-center justify-center 
-                  top-[-60px] left-1/2 transform -translate-x-1/2 
-                  shadow-[10px_-10px_40px_10px_rgba(144,83,232,0.4)]
-                  z-10
-                "
+                className="bg-gray-700 w-[85%] absolute aspect-video rounded-lg overflow-hidden top-[-60px] left-1/2 transform -translate-x-1/2 shadow-[10px_-10px_40px_10px_rgba(144,83,232,0.4)] z-10 border border-white/10"
               >
-                <span className="text-gray-900 font-semibold text-lg">Image/Visual</span>
+                <img 
+                  src={eventItem.imgSrc} 
+                  alt={eventItem.name} 
+                  className="w-full h-full object-cover object-center"
+                />
               </motion.div>
 
               {/* Text Content */}
               <div className="mt-[130px] text-white flex flex-col space-y-3">
                 <h4 className="text-2xl font-bold text-indigo-400">{eventItem.name}</h4>
-                <p className="p-2 text-gray-300 text-base leading-relaxed">{eventItem.des}</p>
+                <p className="p-2 text-gray-300 text-sm md:text-base leading-relaxed">{eventItem.des}</p>
                 <a href={`/events/${eventItem.id}`} className="group text-sm text-purple-400 font-medium hover:text-purple-300 transition mt-2 inline-flex items-center">
                     View Gallery 
                     <span className="ml-1 transition-transform group-hover:translate-x-1">→</span>
