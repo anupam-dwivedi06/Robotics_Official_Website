@@ -16,9 +16,10 @@ const NewSponsor = () => {
           className="mb-20"
         >
           <h1 className="text-center text-4xl md:text-5xl font-extrabold text-white">
+            
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-500">
               {" "}
-              Robofiesta 2026
+              Upcoming Event: RoboMax
             </span>
           </h1>
         </motion.div>
