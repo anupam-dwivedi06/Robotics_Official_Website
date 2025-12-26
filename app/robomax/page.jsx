@@ -64,7 +64,7 @@ const AwardsPage = () => {
                             whileHover={{ y: -10 }}
                             className="
                                 bg-[#111226]/60 p-8 rounded-2xl flex flex-col w-full 
-                                relative min-h-[450px] shadow-2xl backdrop-blur-md 
+                                relative min-h-[400px] md:min-h-[450px] shadow-2xl backdrop-blur-md 
                                 border border-white/5 transition-all duration-300
                                 hover:border-indigo-500/40 group mx-auto
                             "
@@ -74,7 +74,7 @@ const AwardsPage = () => {
                                 whileHover={{ scale: 1.05 }}
                                 className="
                                     w-[90%] absolute h-auto rounded-2xl overflow-hidden
-                                    top-[-150px] left-1/2 transform -translate-x-1/2 
+                                    top-[-85px] md:top-[-150px] left-1/2 transform -translate-x-1/2 
                                     shadow-[0_20px_40px_rgba(0,0,0,0.6)]
                                     z-20 border border-white/10 bg-gray-900
                                 "
@@ -93,7 +93,7 @@ const AwardsPage = () => {
                             </motion.div>
 
                             {/* Card Content Area */}
-                            <div className="mt-[170px] text-white flex flex-col h-full">
+                            <div className=" mt-[120px] md:mt-[170px] text-white flex flex-col h-full">
                                 <h4 className="text-3xl font-black mb-3 tracking-tight group-hover:text-indigo-400 transition-colors">
                                     {award.name}
                                 </h4>
