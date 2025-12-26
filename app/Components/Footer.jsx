@@ -2,10 +2,10 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import { Instagram, Linkedin, Mail, Send } from "lucide-react";
 
 const Footer = () => {
   return (
-    /* Added overflow-hidden here to prevent the motion 'x' from stretching the page */
     <footer className="py-12 md:py-24 bg-[#0d0f23] overflow-hidden w-full">
       <div className="container mx-auto px-6 lg:px-12">
         
@@ -22,12 +22,11 @@ const Footer = () => {
           <p className="text-gray-400 mt-4 italic">Have a question? We'd love to hear from you.</p>
         </motion.div>
 
-        {/* Added w-full and box-sizing safety */}
         <div className="flex flex-col md:flex-row gap-12 md:gap-16 w-full">
           
           {/* Left Section: Contact Form */}
           <motion.div 
-            initial={{ opacity: 0, x: -30 }} /* Reduced distance slightly */
+            initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
@@ -39,7 +38,7 @@ const Footer = () => {
                 <input 
                   id="name"
                   type="text" 
-                  className="bg-gray-800/50 text-white w-full py-4 px-5 rounded-xl border border-gray-700 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all duration-200 placeholder-gray-500 backdrop-blur-sm"
+                  className="bg-gray-800/50 text-white w-full py-4 px-5 rounded-xl border border-gray-700 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all duration-200 placeholder-gray-500 backdrop-blur-sm outline-none"
                   placeholder="Enter your name"
                 />
               </motion.div>
@@ -49,7 +48,7 @@ const Footer = () => {
                 <input 
                   id="email"
                   type="email" 
-                  className="bg-gray-800/50 text-white w-full py-4 px-5 rounded-xl border border-gray-700 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all duration-200 placeholder-gray-500"
+                  className="bg-gray-800/50 text-white w-full py-4 px-5 rounded-xl border border-gray-700 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all duration-200 placeholder-gray-500 outline-none"
                   placeholder="name@example.com"
                 />
               </motion.div>
@@ -59,7 +58,7 @@ const Footer = () => {
                 <textarea 
                   id="msg"
                   rows="4" 
-                  className="bg-gray-800/50 text-white w-full py-4 px-5 rounded-xl border border-gray-700 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all duration-200 resize-none placeholder-gray-500"
+                  className="bg-gray-800/50 text-white w-full py-4 px-5 rounded-xl border border-gray-700 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all duration-200 resize-none placeholder-gray-500 outline-none"
                   placeholder="Tell us about your query..."
                 />
               </motion.div>
@@ -68,16 +67,16 @@ const Footer = () => {
                 whileHover={{ scale: 1.05, boxShadow: "0px 0px 20px rgba(99, 102, 241, 0.4)" }}
                 whileTap={{ scale: 0.95 }}
                 type="submit" 
-                className="text-white bg-gradient-to-r from-purple-600 to-indigo-500 py-4 rounded-xl font-bold text-lg mt-4 w-full md:w-48 transition duration-300 shadow-xl"
+                className="flex items-center justify-center gap-2 text-white bg-gradient-to-r from-purple-600 to-indigo-500 py-4 rounded-xl font-bold text-lg mt-4 w-full md:w-56 transition duration-300 shadow-xl"
               >
-                Send Message
+                Send Message <Send size={20} />
               </motion.button>
             </form>
           </motion.div>
 
           {/* Right Section: Map */}
           <motion.div 
-            initial={{ opacity: 0, x: 30 }} /* Reduced distance slightly */
+            initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
@@ -85,8 +84,7 @@ const Footer = () => {
           >
             <iframe
               title="MANIT Location"
-              /* Updated to a valid sample coordinates for MANIT Bhopal */
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3666.3213032483515!2d77.40108927586241!3d23.213134308848074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c42e185e33d39%3A0xc665b1602330a6c6!2sMaulana%20Azad%20National%20Institute%20of%20Technology!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m13!1m3!1d3666.368739989506!2d77.402636775319!3d23.2114251790432!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c42ef8646f881%3A0x6b0439626c934372!2sMaulana%20Azad%20National%20Institute%20of%20Technology%20(MANIT)%2C%20Bhopal!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin"
               className="w-full h-[400px] md:h-full min-h-[400px] grayscale contrast-125 opacity-80 hover:opacity-100 hover:grayscale-0 transition-all duration-700"
               style={{ border: 0 }}
               allowFullScreen=""
@@ -97,12 +95,32 @@ const Footer = () => {
         </div>
         
         {/* Footer Bottom Line */}
-        <div className="mt-20 pt-8 border-t border-gray-800/50 flex flex-col md:flex-row justify-between items-center gap-4 text-gray-500 text-sm">
+        <div className="mt-20 pt-8 border-t border-gray-800/50 flex flex-col md:flex-row justify-between items-center gap-6 text-gray-500 text-sm">
             <p>© {new Date().getFullYear()} Robotics Club MANIT. All Rights Reserved.</p>
-            <div className="flex gap-6">
-              <a href="#" className="hover:text-indigo-400 transition-colors">Instagram</a>
-              <a href="#" className="hover:text-indigo-400 transition-colors">LinkedIn</a>
-              <a href="#" className="hover:text-indigo-400 transition-colors">Twitter</a>
+            
+            <div className="flex gap-8">
+              <a 
+                href="https://www.instagram.com/roboticsclubmanit?igsh=bTdxY2J0dHdlNTN0" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 hover:text-indigo-400 transition-colors"
+              >
+                <Instagram size={18} /> <span className="hidden sm:inline">Instagram</span>
+              </a>
+              <a 
+                href="https://www.linkedin.com/company/robotics-club-nit-bhopal/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 hover:text-indigo-400 transition-colors"
+              >
+                <Linkedin size={18} /> <span className="hidden sm:inline">LinkedIn</span>
+              </a>
+              <a 
+                href="mailto:roboticsclubnitb@gmail.com" 
+                className="flex items-center gap-2 hover:text-indigo-400 transition-colors"
+              >
+                <Mail size={18} /> <span className="hidden sm:inline">roboticsclubnitb@gmail.com</span>
+              </a>
             </div>
         </div>
       </div>
