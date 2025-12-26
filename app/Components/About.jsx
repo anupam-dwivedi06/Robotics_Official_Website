@@ -63,11 +63,19 @@ const About = () => {
             </motion.h2>
             
             <motion.p variants={fadeInUp} className="mb-4 leading-relaxed text-gray-300">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta accusamus ducimus a est voluptas, deleniti culpa quae, pariatur vero magni ut quam sapiente nesciunt nihil facere ea, blanditiis debitis facilis.
+                
+To foster a student-driven robotics culture with resources
+and activities that turn classroom learning’ into
+real-world innovation through workshops, competitions,
+and projects.
             </motion.p>
             
             <motion.p variants={fadeInUp} className="leading-relaxed text-gray-300">
-              Itaque eum autem illum, nostrum debitis recusandae nemo eveniet ipsam soluta? Our vision is to be a leader in the industry, recognized for our quality.
+             To foster a collaborative student community in robotics
+and automation through hands-on experimentation,
+innovative design, and teamwork, using workshops,
+competitions, and projects to transform classroom
+learning into real-world solutions.
             </motion.p>
           </motion.div>
         </div>
