@@ -49,10 +49,24 @@ const AwardsPage = () => {
     };
 
     return (
-        <section className="bg-[#0a0b1a] min-h-screen py-20  mt-20 overflow-hidden">
+        <section className="bg-[#0a0b1a] min-h-screen py-20 mt-20 overflow-hidden" id="awards">
             <div className="container mx-auto px-6 max-w-6xl">
+                
+                {/* Heading Section Added */}
+                <motion.div 
+                    initial={{ opacity: 0, y: -20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="mb-24 text-center"
+                >
+                    <h2 className="text-5xl md:text-7xl font-black text-white tracking-tighter">
+                        ROBOFIESTA <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">2026</span>
+                    </h2>
+                    <div className="h-1.5 w-32 bg-indigo-600 mx-auto mt-4 rounded-full"></div>
+                </motion.div>
+
                 {/* Grid Layout: 1 column on mobile, 2 columns on desktop */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-24 gap-y-36 md:gap-y-72 pt-32">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-24 gap-y-36 md:gap-y-72 pt-12 md:pt-28">
                     {awardsList.map((award, index) => (
                         <motion.div
                             key={award.id}

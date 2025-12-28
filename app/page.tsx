@@ -23,7 +23,7 @@ export default function Home() {
       <PastEventText />
       <Participant />
 
-      <PeopleSay />
+      {/* <PeopleSay /> */}
       <SponRelay />
       <Footer />
       <AuroraWave />

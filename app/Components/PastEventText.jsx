@@ -12,9 +12,9 @@ const PastEventText = () => {
         },
         {
             id: 2,
-            name: "Priya Singh, Student",
-            comment: "The environment here is incredibly supportive. We're encouraged to fail, learn fast, and build cutting-edge robots. It's the best place for hands-on technical growth!",
-        },
+            name: "Shalini,Automax 4.0 participant",
+            comment: "I just got exposure to robotics with AI. So, now I will go through robotics to showcase my AI specialization and for competition. The mentors are very helpful. In fact, they clear each and every doubt of mine. I will definitely suggest the workshops to my friends and colleagues",
+        }
     ];
 
     const stats = [
