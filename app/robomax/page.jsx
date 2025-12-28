@@ -49,10 +49,10 @@ const AwardsPage = () => {
     };
 
     return (
-        <section className="bg-[#0a0b1a] min-h-screen py-40 mt-20 overflow-hidden">
+        <section className="bg-[#0a0b1a] min-h-screen py-20  mt-20 overflow-hidden">
             <div className="container mx-auto px-6 max-w-6xl">
                 {/* Grid Layout: 1 column on mobile, 2 columns on desktop */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-72 pt-32">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-24 gap-y-36 md:gap-y-72 pt-32">
                     {awardsList.map((award, index) => (
                         <motion.div
                             key={award.id}
