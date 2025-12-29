@@ -10,28 +10,32 @@ const AwardsPage = () => {
             name: "Robowars", 
             des: "Robowars is an intense robot battle competition where a team designs and controls a powerful robot that fights inside a closed arena. The robots are made to push, turn over, press down, or cripple others using special weapons and powerful armor. The battle requires engineering prowess, precision, and strategic thinking. The tournament also focuses on safety, novelty, and sportsmanlike conduct while providing entertainment from head-to-head robot battles.",
             label: "ROBOMAX",
-            img: "https://res.cloudinary.com/dsgdfqnbj/image/upload/v1766764998/robowars_jyfwef.png"
+            img: "https://res.cloudinary.com/dsgdfqnbj/image/upload/v1766764998/robowars_jyfwef.png",
+            url: "https://unstop.com/p/robowars--1615040"
         },
         { 
             id: 2, 
             name: "Micromouse", 
             des: "Micromouse is an autonomous robotics competition where students design and develop a small robot that has to navigate an unknown maze. The robot starts from a specific location and accurately searches for the center of the maze in the least possible time. The obtained robotics project develops skills in students for designing a robot that uses sensor inputs to navigate to its destination without the use of any external controls.",
             label: "NATIONAL",
-            img: "https://res.cloudinary.com/dsgdfqnbj/image/upload/v1766764996/micromouse_nc1913.png"
+            img: "https://res.cloudinary.com/dsgdfqnbj/image/upload/v1766764996/micromouse_nc1913.png",
+            url: "https://unstop.com/p/micromouse--1615120"
         },
         { 
             id: 3, 
             name: "InnovateX", 
             des: "Innovate X is an idea-based robotics competition where participants have to think about innovative applications of robot technology in different areas. The areas in which participants work include healthcare, agriculture, defense, or smart cities. The teams have to provide an in-depth description of their idea using CAD models along with the robot architecture. The competition lies in innovation, feasibility, and applications in the real world rather than speed or combat.",
             label: "IDEATHON",
-            img: "https://res.cloudinary.com/dsgdfqnbj/image/upload/v1766765000/innovatex_bckzbd.png"
+            img: "https://res.cloudinary.com/dsgdfqnbj/image/upload/v1766765000/innovatex_bckzbd.png",
+            url: "https://unstop.com/p/innovate-x--1614908"
         },
         { 
             id: 4, 
             name: "Skycraft", 
             des: "SkyCraft is an aerial robot competition in which teams are required to design and operate a fixed wing remote control aircraft. The task aims at landing safely, flying steadily, carrying out controlled movements, and landing smoothly in a set time. The participants have to control the aircraft manually in such a way that it shows good stability and maneuvering.",
             label: "AERO",
-            img: "https://res.cloudinary.com/dsgdfqnbj/image/upload/v1766764997/skycraft_cr1dgo.png"
+            img: "https://res.cloudinary.com/dsgdfqnbj/image/upload/v1766764997/skycraft_cr1dgo.png",
+            url: "https://unstop.com/p/skycraft--1615180"
         }
     ];
 
@@ -121,7 +125,8 @@ const AwardsPage = () => {
                                         whileHover={{ x: 5 }}
                                         className="text-xs tracking-[0.2em] text-indigo-400 font-bold flex items-center gap-2 uppercase hover:text-white transition-colors"
                                     >
-                                        View Details <span className="text-lg">→</span>
+                                        <a href = {award.url} target='blank'>Apply on UNSTOP <span className="text-lg">→</span>
+                                        </a>
                                     </motion.button>
                                 </div>
                             </div>
