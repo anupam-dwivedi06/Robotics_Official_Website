@@ -240,7 +240,7 @@ const Participant = () => {
                 <div className="mt-[130px] text-white flex flex-col space-y-3">
                   <h4 className="text-2xl font-bold text-indigo-400">{award.name}</h4>
                   <p className="p-2 text-gray-300 text-sm md:text-base text-justify leading-relaxed">{award.des}</p>
-                  <a href={`/events/${award.id}`} className="group text-sm text-purple-400 font-medium hover:text-purple-300 transition mt-2 inline-flex items-center">
+                  <a href={`/events/${award.id}`} className="group  text-sm text-purple-400 font-medium hover:text-purple-300 transition mt-2 inline-flex items-center !hidden">
                     View Gallery
                     <span className="ml-1 transition-transform group-hover:translate-x-1">→</span>
                   </a>

@@ -11,8 +11,8 @@ export default function Navbar() {
   const navItems = [
     { label: "Home", href: "/" },
     { label: "Robofiesta", href: "/robomax" },
-    { label: "Past Events", href: "#pastevent" },
-    { label: "Achievements", href: "#achievements" },
+    { label: "Past Events", href: "/#pastevent" },
+    { label: "Achievements", href: "/#achievements" },
     
   ];
 
