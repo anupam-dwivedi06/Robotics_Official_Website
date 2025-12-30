@@ -4,7 +4,7 @@ import { usePathname, useSearchParams } from "next/navigation";
 
 export default function ScrollHandler() {
   const pathname = usePathname();
-  const searchParams = useSearchParams();
+  // const searchParams = useSearchParams();
 
   useEffect(() => {
     // Wait for the page to be fully loaded
@@ -32,7 +32,7 @@ export default function ScrollHandler() {
     return () => {
       window.removeEventListener("hashchange", handleRouteChange);
     };
-  }, [pathname, searchParams]);
+  }, [pathname]);
 
   return null;
 }
