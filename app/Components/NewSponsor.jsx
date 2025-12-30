@@ -16,7 +16,7 @@ const NewSponsor = () => {
           className="mb-20"
         >
           <h1 className="text-center text-4xl md:text-5xl font-extrabold text-white">
-            
+
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-500">
               {" "}
               Upcoming Event
@@ -46,7 +46,7 @@ const NewSponsor = () => {
               className=" flex items-center justify-center"
             >
               <motion.img
-              src="https://res.cloudinary.com/dpr7uqfxx/image/upload/v1767039184/Robofiesta_ygzr5f.png"
+                src="https://res.cloudinary.com/dpr7uqfxx/image/upload/v1767039184/Robofiesta_ygzr5f.png"
                 animate={{ y: [0, -15, 0] }} // Gentle floating effect
                 transition={{
                   duration: 4,
@@ -57,7 +57,7 @@ const NewSponsor = () => {
                            rounded-3xl flex items-center justify-center text-gray-300 text-xl 
                            font-bold border border-white/5 shadow-2xl"
               />
-                {/* Main Sponsor/Video Placeholder
+              {/* Main Sponsor/Video Placeholder
               </motion.img> */}
             </motion.div>
 
@@ -79,7 +79,7 @@ const NewSponsor = () => {
                 transition={{ delay: 0.5 }}
                 className="text-white text-3xl md:text-6xl font-extrabold leading-tight"
               >
-                 <br />
+                <br />
                 <span className="text-indigo-400">Robofiesta 2026</span>
               </motion.h1>
 
@@ -97,7 +97,9 @@ const NewSponsor = () => {
                 and be part of the future of robotics.
               </motion.p>
 
-              <motion.button
+              <motion.a
+                href="/robomax" 
+                target="_blank"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 whileHover={{
@@ -108,20 +110,30 @@ const NewSponsor = () => {
                 whileTap={{ scale: 0.95 }}
                 transition={{ delay: 0.5, duration: 0.4 }}
                 className="
-    relative group overflow-hidden
-    bg-gradient-to-r from-[indigo-400/20] to-[purple-400/20 ] 
-    text-white py-3 px-10 rounded-xl 
-    font-bold text-lg mt-8
-    shadow-[0px_0px_20px_rgba(144,83,232,0.3)]
-    border border-white/20 backdrop-blur-md
-    transition-all duration-300
-  "
+                  relative group overflow-hidden
+                  bg-gradient-to-r from-[indigo-400/20] to-[purple-400/20 ] 
+                  text-white py-3 px-10 rounded-xl   
+                  font-bold text-lg mt-8
+                  shadow-[0px_0px_20px_rgba(144,83,232,0.3)]
+                  border border-white/20 backdrop-blur-md
+                  transition-all duration-300
+                  "
               >
                 {/* Inner Reflection/Shine Effect */}
+{/* 
+                <a href="/robomax" target="_blank">
+                   <span className="absolute inset-0 w-full h-full bg-gradient-to-t from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out" />
+
+                <span className="relative z-10">
+                  Register Now
+                </span>
+                </a> */}
                 <span className="absolute inset-0 w-full h-full bg-gradient-to-t from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out" />
 
-                <span className="relative z-10">Register Now</span>
-              </motion.button>
+                <span className="relative z-10">
+                  Register Now
+                </span>
+              </motion.a>
             </div>
           </div>
 
