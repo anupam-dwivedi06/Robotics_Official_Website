@@ -11,8 +11,14 @@ export default function Navbar() {
   const navItems = [
     { label: "Home", href: "/" },
     { label: "Robofiesta", href: "/robomax" },
-    { label: "Past Events", href: "/#pastevent" },
-    { label: "Achievements", href: "/#achievements" },
+
+    ...(
+      pathname === "/"? [
+        { label: "Past Events", href: "#pastevent" },
+        { label: "Achievements", href: "#achievements" },
+    
+      ] : []
+    ),
     
   ];
 
@@ -36,12 +42,13 @@ export default function Navbar() {
         >
           <GooeyNav
             items={navItems}
-            particleCount={20}
+            particleCount={15}
             particleDistances={[90, 10]}
             particleR={100}
             initialActiveIndex={0}
             animationTime={600}
             timeVariance={300}
+            colors={[1,4, 2, 3, 1, 2, 3, 1, ]}
           />
         </div>
 
