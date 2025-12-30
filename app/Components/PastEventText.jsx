@@ -12,7 +12,7 @@ const PastEventText = () => {
         },
         {
             id: 2,
-            name: "Shalini,Automax 4.0 participant",
+            name: "Shalini, Automax 4.0 participant",
             comment: "I just got exposure to robotics with AI. So, now I will go through robotics to showcase my AI specialization and for competition. The mentors are very helpful. In fact, they clear each and every doubt of mine. I will definitely suggest the workshops to my friends and colleagues",
         }
     ];

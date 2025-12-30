@@ -46,34 +46,35 @@ const PastEvent = () => {
 
   const cardVariants = {
     hidden: { opacity: 0, y: 50 },
-    visible: { 
-      opacity: 1, 
-      y: 0, 
-      transition: { duration: 0.6, ease: "easeOut" } 
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" }
     },
   };
 
   return (
     <section className="py-16 md:py-24 overflow-hidden" id="pastevent">
       <div className="container mx-auto px-6 lg:px-12">
-        
-        <motion.div 
+
+        <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-20"
+          className="mb-30"
         >
           <h1 className="text-center text-4xl md:text-5xl font-extrabold text-white">
             Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-500">Past Events</span>
           </h1>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-28 gap-x-10 justify-items-center"
+          className="flex flex-wrap justify-center
+    gap-x-10 gap-y-28"
         >
           {events.map((eventItem, index) => {
             // Determine if the index is even (0, 2, 4) or odd (1, 3)
@@ -83,7 +84,7 @@ const PastEvent = () => {
               <motion.div
                 key={eventItem.id}
                 variants={cardVariants}
-                whileHover={{ y: -10 }} 
+                whileHover={{ y: -10 }}
                 className="bg-gray-800/60 p-5 rounded-xl flex flex-col w-full max-w-sm relative min-h-[400px] shadow-2xl backdrop-blur-sm border border-indigo-500/30 transition-shadow duration-300 mt-10 hover:shadow-indigo-500/20 hover:border-indigo-400"
               >
                 {/* Image Visual with Alternating Scroll Directions */}
@@ -93,9 +94,9 @@ const PastEvent = () => {
                   transition={{ delay: index * 0.2 + 0.3 }}
                   className="bg-gray-700 w-[85%] absolute aspect-video rounded-lg overflow-hidden top-[-60px] left-1/2 transform -translate-x-1/2 shadow-[10px_-10px_40px_10px_rgba(144,83,232,0.4)] z-10 border border-white/10"
                 >
-                  <motion.img 
-                    src={eventItem.imgSrc} 
-                    alt={eventItem.name} 
+                  <motion.img
+                    src={eventItem.imgSrc}
+                    alt={eventItem.name}
                     // Use object-top for even and object-bottom for odd to start at opposite ends
                     className={`w-full h-auto absolute left-0 ${isEven ? 'top-0' : 'bottom-0'}`}
                     animate={{
@@ -104,9 +105,9 @@ const PastEvent = () => {
                       y: isEven ? ["0%", "-50%", "0%"] : ["0%", "50%", "0%"]
                     }}
                     transition={{
-                      duration: 12, 
-                      repeat: Infinity, 
-                      ease: "easeInOut" 
+                      duration: 12,
+                      repeat: Infinity,
+                      ease: "easeInOut"
                     }}
                   />
                 </motion.div>
@@ -116,8 +117,8 @@ const PastEvent = () => {
                   <h4 className="text-2xl font-bold text-indigo-400">{eventItem.name}</h4>
                   <p className="p-2 text-gray-300 text-sm md:text-base leading-relaxed">{eventItem.des}</p>
                   <a href={`/events/${eventItem.id}`} className="group text-sm text-purple-400 font-medium hover:text-purple-300 transition mt-2 inline-flex items-center">
-                      View Gallery 
-                      <span className="ml-1 transition-transform group-hover:translate-x-1">→</span>
+                    View Gallery
+                    <span className="ml-1 transition-transform group-hover:translate-x-1">→</span>
                   </a>
                 </div>
               </motion.div>

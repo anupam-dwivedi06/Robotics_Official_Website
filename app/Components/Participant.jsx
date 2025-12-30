@@ -9,38 +9,39 @@ const Participant = () => {
       id: 1,
       name: "NXP AIM 2025",
       des: "We secured the AI Arjuna Award by building a high-performance autonomous system for warehouse navigation and object detection, demonstrating strong technical depth and teamwork.",
-      imgSrc: "placeholder_nxp_aim",
+      imgSrc: "https://res.cloudinary.com/dpr7uqfxx/image/upload/v1767033549/nxpaim_iqewtk.jpg",
     },
     {
       id: 2,
-      name: "GUJARAT ROBOFEST 4.0",
-      des: "We emerged as Grand Finalists at Gujarat Robofest 2025, representing our ideas in Rover and Application-Based challenges, showcasing technical depth and real-world impact.",
-      imgSrc: "placeholder_gujarat_robofest",
+      name: "Boeing aeromodelling - IIT Gandhinagar",
+      des: "We showcased our RC aircraft developed through end-to-end design, fabrication, and testing. The journey emphasized learning through experimentation, teamwork, and practical engineering.",
+      imgSrc: "https://res.cloudinary.com/dpr7uqfxx/image/upload/v1767073588/boeing_esany0.jpg",
     },
     {
       id: 3,
-      name: "TECHNEX IIT BHU",
-      des: "We excelled at Technex 2025, IIT BHU, ranking among the top teams with innovative designs and precise execution, strengthening our legacy of innovation.",
-      imgSrc: "placeholder_technex",
+      name: "GUJARAT ROBOFEST 4.0",
+      des: "We emerged as Grand Finalists at Gujarat Robofest 2025, representing our ideas in Rover and Application-Based challenges, showcasing technical depth and real-world impact.",
+      imgSrc: "https://res.cloudinary.com/dpr7uqfxx/image/upload/v1767033549/gujratrobofest_bqox1s.jpg",
     },
     {
       id: 4,
-      name: "ABU ROBOCON",
-      des: "This hands-on challenge pushed participants to solve real-world problems using robotics kits under time pressure, highlighting innovation and rapid prototyping.",
-      imgSrc: "placeholder_robocon",
+      name: "TECHNEX IIT BHU",
+      des: "We excelled at Technex 2025, IIT BHU, ranking among the top teams with innovative designs and precise execution, strengthening our legacy of innovation.",
+      imgSrc: "https://res.cloudinary.com/dpr7uqfxx/image/upload/v1767016364/technex_rnc7jl.jpg",
     },
     {
       id: 5,
-      name: "FLIPKART GRID 4.0",
-      des: "Built an autonomous drone with accurate pick-and-drop capabilities powered by computer vision, combining Pixhawk and Raspberry Pi for intelligent flight control.",
-      imgSrc: "placeholder_flipkart_grid",
+      name: "ABU ROBOCON",
+      des: "This hands-on challenge pushed participants to solve real-world problems using robotics kits under time pressure, highlighting innovation and rapid prototyping.",
+      imgSrc: "https://res.cloudinary.com/dpr7uqfxx/image/upload/v1767073273/robocon_girm4r.jpg",
     },
     {
       id: 6,
-      name: "ISRO ROVER DESIGN CHALLENGE",
-      des: "Advanced to Round 2 of the ISRO Robotics Challenge – URSC, designing a rover capable of rough terrain navigation and sample collection for future space exploration.",
-      imgSrc: "placeholder_isro_rover",
+      name: "FLIPKART GRID 4.0",
+      des: "Built an autonomous drone with accurate pick-and-drop capabilities powered by computer vision, combining Pixhawk and Raspberry Pi for intelligent flight control.",
+      imgSrc: "https://res.cloudinary.com/dpr7uqfxx/image/upload/v1767073345/grid_bcjlke.jpg",
     },
+    
   ];
 
   const fadeInUp = {
@@ -57,7 +58,7 @@ const Participant = () => {
   };
 
   return (
-    <section className="bg-gray-900 py-20 md:py-28 overflow-hidden">
+    <section className="bg-gray-900 py-20 md:py-20 overflow-hidden">
       <div className="container mx-auto px-6 lg:px-12">
         
         {/* 1. Header Section */}
@@ -74,7 +75,7 @@ const Participant = () => {
         </motion.div>
 
         {/* 2. Top Section: Increased Gap + Connecting Logic */}
-        <div className="flex flex-col md:flex-row items-center justify-center gap-16 lg:gap-32 mb-40 relative">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-16 lg:gap-32 mb-25 relative">
           
           {/* Main Photo (Left) */}
           <motion.div 
@@ -131,7 +132,7 @@ const Participant = () => {
                 { ico: "🏆", txt: "AI Arjuna Award - NXP AIM 2025", sub: "National Winner" },
                 { ico: "🥇", txt: "Grand Finalists - Robofest 4.0", sub: "Top Tier Performance" },
                 { ico: "🌍", txt: "Top Rankings - Technex IIT BHU", sub: "Innovation Excellence" },
-                { ico: "🏅", txt: "Winner - State Level Challenges", sub: "Technical Proficiency" }
+                { ico: "🏅", txt: "Zonal Qualifiers - Boeing RC Aeromodelling", sub: "Technical Proficiency" }
               ].map((item, i) => (
                 <motion.li 
                   key={i}
@@ -159,7 +160,7 @@ const Participant = () => {
           variants={staggerContainer}
           className="flex flex-wrap justify-center gap-y-36 gap-x-12 pt-10"
         >
-          {awardsList.map((award, index) => (
+          {/* {awardsList.map((award, index) => (
             <motion.div
               key={award.id}
               variants={fadeInUp}
@@ -174,7 +175,22 @@ const Participant = () => {
               >
                 <div className="absolute inset-0 bg-gradient-to-tr from-indigo-600/20 to-transparent" />
                 <span className="text-indigo-950 font-black text-2xl tracking-tighter uppercase opacity-90 text-center px-4">
-                  {award.name}
+                  <motion.img
+                    src={award.imgSrc}
+                    alt={award.name}
+                    // Use object-top for even and object-bottom for odd to start at opposite ends
+                    className={`w-full h-auto absolute left-0 `}
+                    animate={{
+                      // If even: starts at top (0) moves to bottom (-50%)
+                      // If odd: starts at bottom (0) moves to top (50% because it's bottom-aligned)
+                      // y: isEven ? ["0%", "-50%", "0%"] : ["0%", "50%", "0%"]
+                    }}
+                    transition={{
+                      duration: 12,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }}
+                  />
                 </span>
               </motion.div>
 
@@ -191,7 +207,47 @@ const Participant = () => {
                 </div>
               </div>
             </motion.div>
-          ))}
+          ))} */}
+          {awardsList.map((award, index) => {
+            return (
+              <motion.div
+                key={award.id}
+                // variants={cardVariants}
+                whileHover={{ y: -10 }}
+                className="bg-gray-800/60 p-5 rounded-xl flex flex-col w-full max-w-sm  relative min-h-[400px] shadow-2xl backdrop-blur-sm border border-indigo-500/30 transition-shadow duration-300 mt-10 hover:shadow-indigo-500/20 hover:border-indigo-400"
+              >
+                {/* Image Visual with Alternating Scroll Directions */}
+                <motion.div
+                  initial={{ scale: 0.8, opacity: 0 }}
+                  whileInView={{ scale: 1, opacity: 1 }}
+                  transition={{ delay: index * 0.2 + 0.3 }}
+                  className="bg-gray-700 w-[85%] absolute aspect-video rounded-lg overflow-hidden top-[-60px] left-1/2 transform -translate-x-1/2 shadow-[10px_-10px_40px_10px_rgba(144,83,232,0.4)] z-10 border border-white/10"
+                >
+                  <motion.img
+                    src={award.imgSrc}
+                    alt={award.name}
+                    // Use object-top for even and object-bottom for odd to start at opposite ends
+                    className={`w-full h-auto absolute left-0 `}
+                    transition={{
+                      duration: 10,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }}
+                  />
+                </motion.div>
+
+                {/* Text Content */}
+                <div className="mt-[130px] text-white flex flex-col space-y-3">
+                  <h4 className="text-2xl font-bold text-indigo-400">{award.name}</h4>
+                  <p className="p-2 text-gray-300 text-sm md:text-base text-justify leading-relaxed">{award.des}</p>
+                  <a href={`/events/${award.id}`} className="group text-sm text-purple-400 font-medium hover:text-purple-300 transition mt-2 inline-flex items-center">
+                    View Gallery
+                    <span className="ml-1 transition-transform group-hover:translate-x-1">→</span>
+                  </a>
+                </div>
+              </motion.div>
+            );
+          })}
         </motion.div>
       </div>
     </section>
