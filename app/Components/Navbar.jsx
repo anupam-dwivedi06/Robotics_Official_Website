@@ -10,7 +10,8 @@ export default function Navbar() {
 
   const navItems = [
     { label: "Home", href: "/" },
-    { label: "Robofiesta", href: "/robomax" },
+    // { label: "Robofiesta", href: "/robomax" },
+    { label: "AutoMax", href: "/automax" },
 
     ...(
       pathname === "/"? [

@@ -34,6 +34,12 @@ const PastEvent = () => {
       des: "A massive workshop and competition for 500+ students from Bhopal, focusing on hands-on electronics and mechanics challenges.",
       imgSrc: "https://res.cloudinary.com/dsgdfqnbj/image/upload/v1766763553/automax3_bsi98x.webp",
     },
+    {
+      id: 6,
+      name: "ROBOFIESTA 2026",
+      des: "A massive workshop and competition for 500+ students from Bhopal, focusing on hands-on electronics and mechanics challenges.",
+      imgSrc: "https://res.cloudinary.com/dsgdfqnbj/image/upload/v1770131912/robofeista_poster_hlgmg9.jpg",
+    },
   ];
 
   const containerVariants = {
