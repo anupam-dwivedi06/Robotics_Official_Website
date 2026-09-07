@@ -72,7 +72,7 @@ export default function WorkshopForm({ workshop }) {
         </section>
 
         <section className="rounded-4xl border border-white/10 bg-[#11182a] p-6 shadow-2xl md:p-10">
-          <div className="mb-8 flex items-end justify-between gap-4"><div><p className="text-xs font-bold uppercase tracking-[0.3em] text-fuchsia-300">Participant details</p><h2 className="mt-2 text-2xl font-bold">Complete your registration</h2></div><Link href="/automax/entries" className="text-right text-xs font-bold uppercase tracking-wider text-slate-400 hover:text-white">View entries</Link></div>
+          <div className="mb-8"><p className="text-xs font-bold uppercase tracking-[0.3em] text-fuchsia-300">Participant details</p><h2 className="mt-2 text-2xl font-bold">Complete your registration</h2></div>
           <div className="mb-8 flex flex-col items-center gap-4 border border-cyan-300/20 bg-[#0b1020] p-5 text-center sm:flex-row sm:text-left">
             <img src={workshop.qrImage} alt={`Scan to pay for ${workshop.name}`} className="h-40 w-40 object-contain" />
             <div><p className="text-sm font-black uppercase tracking-[0.2em] text-cyan-300">Scan to pay</p><p className="mt-2 text-sm leading-6 text-slate-400">Pay the workshop fee using this QR code, then upload your payment screenshot below.</p></div>
