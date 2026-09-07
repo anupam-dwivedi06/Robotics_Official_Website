@@ -11,7 +11,7 @@ const AwardsPage = () => {
             des: "Take innovation beyond the ground and explore the world of aerial robotics and drone technology. The Aero-Drone Workshop offers hands-on learning in drone systems, flight mechanisms, electronics, control systems, and real-world applications. Discover how drones work, experiment with the technology behind them, and turn ideas into practical skills. Learn. Build. Fly. Innovate. Let your ideas take flight.",
             label: "ROBOMAX",
             img: "https://res.cloudinary.com/dsgdfqnbj/image/upload/v1788731309/aerodrone_jxg8wi.jpg",
-            url: "https://unstop.com/p/robowars--1615040"
+            url: "/automax/aero-drone"
         },
         { 
             id: 2, 
@@ -19,7 +19,7 @@ const AwardsPage = () => {
             des: "Step into the future where Artificial Intelligence meets Robotics. Explore how AI, robotics, sensors, and automation come together to create intelligent machines. Through hands-on learning, discover how robots can perceive, learn, make decisions, and interact with the world. Learn. Integrate. Automate. Innovate. Discover how AI can bring machines to life.",
             label: "NATIONAL",
             img: "https://res.cloudinary.com/dsgdfqnbj/image/upload/v1788731309/robotics_ai_e9w93c.jpg",
-            url: "https://unstop.com/p/micromouse--1615120"
+            url: "/automax/ai-robotics"
         }
     ];
 
@@ -107,12 +107,10 @@ const AwardsPage = () => {
                                 <div className="mt-auto pt-5 border-t border-white/5">
                                     <motion.a 
                                         href={award.url}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
                                         whileHover={{ x: 5 }}
                                         className="inline-flex items-center gap-2.5 text-xs tracking-[0.25em] text-indigo-400 font-bold uppercase hover:text-white transition-colors"
                                     >
-                                        Apply on UNSTOP <span className="text-xl transition-transform group-hover:translate-x-1">→</span>
+                                        Register now <span className="text-xl transition-transform group-hover:translate-x-1">→</span>
                                     </motion.a>
                                 </div>
                             </div>
