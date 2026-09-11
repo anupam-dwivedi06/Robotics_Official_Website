@@ -3,11 +3,17 @@ export const workshops = {
     slug: "aero",
     name: "AERO-DRONE WORKSHOP",
     qrImage: process.env.NEXT_PUBLIC_AERO_DRONE_QR || "/qr-aero-drone.jpeg",
+    upiId: "mehul@fam",
+    originalPrice: 999,
+    price: 599,
   },
   ai: {
     slug: "ai",
     name: "AI-INTEGRATED ROBOTICS WORKSHOP",
     qrImage: process.env.NEXT_PUBLIC_AI_ROBOTICS_QR || "/qr-ai-robotics.jpeg",
+    upiId: "7225815482@fam",
+    originalPrice: 299,
+    price: 199,
   },
 };
 

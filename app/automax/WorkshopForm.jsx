@@ -75,7 +75,12 @@ export default function WorkshopForm({ workshop }) {
           <div className="mb-8"><p className="text-xs font-bold uppercase tracking-[0.3em] text-fuchsia-300">Participant details</p><h2 className="mt-2 text-2xl font-bold">Complete your registration</h2></div>
           <div className="mb-8 flex flex-col items-center gap-4 border border-cyan-300/20 bg-[#0b1020] p-5 text-center sm:flex-row sm:text-left">
             <img src={workshop.qrImage} alt={`Scan to pay for ${workshop.name}`} className="h-40 w-40 object-contain" />
-            <div><p className="text-sm font-black uppercase tracking-[0.2em] text-cyan-300">Scan to pay</p><p className="mt-2 text-sm leading-6 text-slate-400">Pay the workshop fee using this QR code, then upload your payment screenshot below.</p></div>
+            <div>
+              <p className="text-sm font-black uppercase tracking-[0.2em] text-cyan-300">Scan to pay</p>
+              <p className="mt-2 text-sm leading-6 text-slate-400">You can also pay on <span className="font-semibold text-white">{workshop.upiId}</span>.</p>
+              <p className="mt-3 text-lg font-bold text-white"><span className="mr-2 text-slate-500 line-through">₹{workshop.originalPrice}</span> ₹{workshop.price}</p>
+              <p className="mt-1 text-xs leading-5 text-slate-500">Upload your payment screenshot below.</p>
+            </div>
           </div>
           <form onSubmit={submitForm} className="space-y-5">
             <div className="grid gap-5 md:grid-cols-2">

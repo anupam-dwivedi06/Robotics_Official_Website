@@ -46,7 +46,8 @@ const NewSponsor = () => {
               className=" flex items-center justify-center"
             >
               <motion.img
-                src="https://res.cloudinary.com/dpr7uqfxx/image/upload/v1767039184/Robofiesta_ygzr5f.png"
+                // src="https://res.cloudinary.com/dpr7uqfxx/image/upload/v1767039184/Robofiesta_ygzr5f.png"
+                src="https://res.cloudinary.com/dmg4pfrkg/image/upload/v1789110210/Artboard_1_tv9xjj.png"
                 animate={{ y: [0, -15, 0] }} // Gentle floating effect
                 transition={{
                   duration: 4,
@@ -80,10 +81,19 @@ const NewSponsor = () => {
                 className="text-white text-3xl md:text-6xl font-extrabold leading-tight"
               >
                 <br />
-                <span className="text-indigo-400">Robofiesta 2026</span>
+                {/* <span className="text-indigo-400">Robofiesta 2026</span> */}
+                <span className="text-indigo-400">AUTOMAX 5.0</span>
               </motion.h1>
 
               <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6 }}
+                className="text-gray-300 text-lg leading-relaxed max-w-lg"
+              >
+               A next-generation hands-on workshop taking participants beyond the basics of robotics and drones, where they explore AI, ML, and autonomous systems while building real-world projects. From drone technology and flight systems to AI-powered robotics and intelligent control, AUTOMAX 5.0 brings together hardware, software, and innovation to turn ideas into working machines.
+              </motion.p>
+              {/* <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6 }}
@@ -95,10 +105,10 @@ const NewSponsor = () => {
                 face real-world challenges like never before. It’s more than a
                 contest — it’s a platform to learn, compete, and evolve. Join us
                 and be part of the future of robotics.
-              </motion.p>
+              </motion.p> */}
 
               <motion.a
-                href="/robomax" 
+                href="/automax" 
                 target="_blank"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
