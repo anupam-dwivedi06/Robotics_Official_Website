@@ -68,7 +68,7 @@ export default function WorkshopForm({ workshop }) {
             <h1 className="mt-4 text-4xl font-black leading-[0.95] tracking-tight md:text-6xl">{workshop.name}</h1>
             <p className="mt-6 max-w-md text-base leading-7 text-slate-300">Reserve your place and join a hands-on session built for curious minds, practical builders, and future robotics innovators.</p>
           </div>
-          <p className="mt-12 border-t border-white/10 pt-6 text-sm text-slate-400"><span className="text-white">Your details are securely stored after submission.</span><br />Use the entries dashboard to review registrations and download an Excel file.</p>
+          <p className="mt-12 border-t border-white/10 pt-6 text-sm text-slate-400"><span className="text-white">Your details are securely stored after submission.</span><br />You will receive the confirmation email and invitation one week before the workshop, and you will also be added to the official workshop groups around the same time.</p>
         </section>
 
         <section className="rounded-4xl border border-white/10 bg-[#11182a] p-6 shadow-2xl md:p-10">
