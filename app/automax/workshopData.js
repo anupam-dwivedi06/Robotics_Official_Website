@@ -5,15 +5,15 @@ export const workshops = {
     qrImage: process.env.NEXT_PUBLIC_AERO_DRONE_QR || "/qr-aero-drone.jpeg",
     upiId: " mehul@fam or pay directly to number 9329403927",
     originalPrice: 999,
-    price: 599,
+    price: 799,
   },
   ai: {
     slug: "ai",
     name: "AI-INTEGRATED ROBOTICS WORKSHOP",
     qrImage: process.env.NEXT_PUBLIC_AI_ROBOTICS_QR || "/qr-ai-robotics.jpeg",
-    upiId: "7225815482@fam or pay directly to number 7225815482",
-    originalPrice: 299,
-    price: 199,
+    upiId: "utkarshmarkam14@oksbi or pay directly to number 7225815482",
+    originalPrice: 399,
+    price: 299,
   },
 };
 
