@@ -1,10 +1,37 @@
 "use client";
 
-import React from 'react';
+import React from "react";
 import { motion } from "framer-motion";
 
-const AwardsPage = () => {
-    const awardsList = [
+const AwardsPage = () => (
+    <section className="bg-[#0a0b1a] min-h-screen py-24 mt-20 overflow-hidden" id="awards">
+            <div className="container mx-auto px-6 max-w-7xl">
+                
+                
+                <motion.div 
+                    initial={{ opacity: 0, y: -20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="mb-16 md:mb-20 text-center"
+                >
+                    <h2 className="text-5xl md:text-7xl font-black text-white tracking-tighter">
+                        AUTOMAX <span className="text-transparent p-2 bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">5.0</span>
+                    </h2>
+                    <div className="h-1.5 w-32 bg-indigo-600 mx-auto mt-4 rounded-full"></div>
+                </motion.div>
+
+                <div className="mx-auto max-w-2xl text-center text-white">
+                    <p className="text-2xl font-bold text-red-400">Registrations are closed</p>
+                    <p className="mt-3 text-lg text-gray-300">On-desk registration is available from 9:00 to 9:30.</p>
+                </div>
+
+                </div>
+                </section>
+);
+export default AwardsPage;
+
+/*
+const awardsList = [
         { 
             id: 1, 
             name: "AERO-DRONE WORKSHOP", 
@@ -40,7 +67,7 @@ const AwardsPage = () => {
         <section className="bg-[#0a0b1a] min-h-screen py-24 mt-20 overflow-hidden" id="awards">
             <div className="container mx-auto px-6 max-w-7xl">
                 
-                {/* Heading Section */}
+                
                 <motion.div 
                     initial={{ opacity: 0, y: -20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -53,7 +80,7 @@ const AwardsPage = () => {
                     <div className="h-1.5 w-32 bg-indigo-600 mx-auto mt-4 rounded-full"></div>
                 </motion.div>
 
-                {/* Grid Layout: Using larger max-w-7xl and tighter gap */}
+           
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12">
                     {awardsList.map((award, index) => (
                         <motion.div
@@ -72,7 +99,7 @@ const AwardsPage = () => {
                                 hover:border-indigo-500/30 group mx-auto
                             "
                         >
-                            {/* Image Container: 70% height aspect ratio (10:7) */}
+                  
                             <motion.div
                                 whileHover={{ scale: 1.01 }}
                                 transition={{ duration: 0.3 }}
@@ -90,11 +117,11 @@ const AwardsPage = () => {
                                     alt={award.name} 
                                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                                 />
-                                {/* Subtle Inner Shadow Overlay */}
+                           
                                 <div className="absolute inset-0 shadow-[inset_0_0_60px_rgba(0,0,0,0.3)] pointer-events-none"></div>
                             </motion.div>
 
-                            {/* Card Content Area */}
+                           
                             <div className="text-white flex flex-col flex-grow w-full">
                                 <h3 className="text-3xl font-black mb-4 tracking-tight group-hover:text-indigo-400 transition-colors leading-snug">
                                     {award.name}
@@ -122,4 +149,4 @@ const AwardsPage = () => {
     );
 };
 
-export default AwardsPage;
+*/
